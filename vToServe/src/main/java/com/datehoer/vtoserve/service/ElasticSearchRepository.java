@@ -1,6 +1,8 @@
 package com.datehoer.vtoserve.service;
 
 import com.datehoer.vtoserve.model.ElasticSearch;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.annotations.Highlight;
 import org.springframework.data.elasticsearch.annotations.HighlightField;
 import org.springframework.data.elasticsearch.annotations.HighlightParameters;

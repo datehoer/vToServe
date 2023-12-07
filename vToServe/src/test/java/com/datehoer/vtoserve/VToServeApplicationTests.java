@@ -1,6 +1,8 @@
 package com.datehoer.vtoserve;
 
+import com.datehoer.vtoserve.model.DocumentLibraryQuery;
 import com.datehoer.vtoserve.model.ElasticSearch;
+import com.datehoer.vtoserve.model.PageVO;
 import com.datehoer.vtoserve.service.ElasticSearchRepository;
 import com.datehoer.vtoserve.service.ElasticSearchService;
 import org.junit.jupiter.api.Test;
@@ -21,12 +23,9 @@ class VToServeApplicationTests {
     }
     @Test
     void testElasticSearch(){
-        ElasticSearch elasticSearch = new ElasticSearch();
-        elasticSearch.setId(3);
-        elasticSearch.setTitle("Cool");
-        elasticSearch.setContent("sewqeq");
-        elasticSearch.setPrice(1.0);
-        elasticSearchService.save(elasticSearch);
+        DocumentLibraryQuery query = new DocumentLibraryQuery();
+        PageVO<ElasticSearch> search = elasticSearchService.search(query);
+        System.out.println(search);
     }
     @Test
     void findById(){
